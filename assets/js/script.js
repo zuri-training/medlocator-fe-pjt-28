@@ -1,24 +1,10 @@
-// TOGGLE MENU
-
-const menu = document.querySelector(".menu-list");
-const menuBtn = document.querySelector(".menu-btn");
-const cancelBtn = document.querySelector(".cancel-btn");
-
-menuBtn.onclick = ()=> {
-    menu.classList.add("active");
-    menuBtn.classList.add("hide");
+// STICKY NAVIGATION 
+let nav = document.querySelector(".navbar");
+let val;
+window.onscroll = function() {
+    if(document.documentElement.scrollTop > 20) {
+        nav.classList.add("sticky")
+    }else {
+        nav.classList.remove("sticky")
+    }
 }
-
-cancelBtn.onclick = ()=> {
-    menu.classList.remove("active");
-    menuBtn.classList.remove("hide");
-}
-
-// CLOSE THE NAV WHEN NAVLNKS ARE CLICKED
-let navLinks = document.querySelectorAll('.nav-list a');
-
-navLinks.forEach(function (navLink) {
-    navLink.addEventListener('click', function () {
-    myList.classList.remove('show');
-    })
-})
