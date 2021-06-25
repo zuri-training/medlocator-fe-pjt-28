@@ -140,6 +140,7 @@ ul {
     font-weight: 500;
     padding: 1.5rem 4rem;
     background: var(--primary-color);
+    border: 2px solid var(--primary-color);
     color: var(--white-color);
     border: 2px solid var(--primary-color);
     transition: .5s ease;
@@ -155,6 +156,7 @@ ul {
     font-weight: 500;
     padding: 1.5rem 3rem;
     background: transparent;
+    border: 2px solid var(--primary-color);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
     transition: .5s ease;
