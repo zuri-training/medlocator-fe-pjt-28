@@ -396,6 +396,10 @@ footer .copy-right {
     justify-content: space-between;
 }
 
+.chechbtx-section span {
+    opacity: 0.5;
+}
+
 .nav-reg {
     width: 100%;
     text-align: center;
