@@ -318,6 +318,13 @@ footer .copy-right {
     justify-content: center;
 }
 
+.form .arrow-left {
+    position: absolute;
+    top: 60px;
+    left: 70px;
+    font-size: 1.5rem;
+}
+
 .form .form-container {
     position: relative;
     width: 60%;
@@ -333,6 +340,7 @@ footer .copy-right {
     font-size: 18px;
     font-weight: 600;
     color: var(--dark-gray);
+    margin-top: 2rem;
 }
 .form .form-container p {
     font-size: 14px;
@@ -358,12 +366,28 @@ footer .copy-right {
     color: var(--dark-gray);
 }
 
+.form .form-container .input-field::placeholder {
+    opacity: 0.4;
+} /* This is for password reset page  */
+
+.form .form-container .p-detail {
+    font-weight: 400;
+    color: var(--dark-gray);
+    opacity: 0.7;
+    width: 70%;
+    margin: 1rem auto;
+    text-align: center;
+} /* This is for password reset page  */
+
 .input-field {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-gray);
     width: 100%;
     padding: 10px 10px;
     margin: 0.5rem 0;
     outline: none;
-    font-size: 1rem;
+    border: 1px solid var(--dark-gray);
 }
 
 .login-btn {
