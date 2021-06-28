@@ -60,18 +60,19 @@ async function handleFormSubmit(event) {
 
 		if(responseData){
             alert("Success");
-            document.location = "index.html"
             location.reload();
+            document.location = "index.html";
+            
         }
 	} catch (error) {
 		console.error(error);
 	}
 }
 
-async function checkPage(){
-    const signUpForm = await document.getElementById("registerForm");
+function checkPage(){
+    const signUpForm = document.getElementById("registerForm");
 
-    const exampleForm = await document.getElementById("loginForm");
+    const exampleForm = document.getElementById("loginForm");
 
     if(signUpForm){
         signUpForm.addEventListener('submit', handleFormSubmit);
