@@ -69,5 +69,5 @@ async function handleFormSubmit(event) {
 const exampleForm = document.getElementById("loginForm");
 exampleForm.addEventListener("submit", handleFormSubmit);
 
-const registerForm = document.getElementById("registerForm");
-registerForm.addEventListener("submit",handleFormSubmit);
+const signUpForm = document.getElementById("registerForm");
+signUpForm.addEventListener("submit", handleFormSubmit);
