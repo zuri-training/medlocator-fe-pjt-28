@@ -61,6 +61,7 @@ async function handleFormSubmit(event) {
 		if(responseData){
             alert("Success");
             document.location = "index.html"
+            location.reload();
         }
 	} catch (error) {
 		console.error(error);
