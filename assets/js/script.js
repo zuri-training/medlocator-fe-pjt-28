@@ -48,10 +48,11 @@ window.onscroll = function() {
  * @param {SubmitEvent} event
  */
 async function handleFormSubmit(event) {
-	event.preventDefault();
+	await event.preventDefault();
 
 	const form = event.currentTarget;
 	const url = form.action;
+    console.log(typeof form);
 
 	try {
 		const formData = new FormData(form);
@@ -66,8 +67,18 @@ async function handleFormSubmit(event) {
 	}
 }
 
-const exampleForm = document.getElementById("loginForm");
-exampleForm.addEventListener("submit", handleFormSubmit);
+async function checkPage(){
+    const signUpForm = await document.getElementById("registerForm");
 
-const signUpForm = document.getElementById("registerForm");
-signUpForm.addEventListener("submit", handleFormSubmit);
+    const exampleForm = await document.getElementById("loginForm");
+
+    if(signUpForm){
+        signUpForm.addEventListener('submit', handleFormSubmit);
+    }
+    if(exampleForm){
+        exampleForm.addEventListener('submit', handleFormSubmit);
+    }
+}
+
+window.onload = checkPage;
+
