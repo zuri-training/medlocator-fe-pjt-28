@@ -52,7 +52,6 @@ async function handleFormSubmit(event) {
 
 	const form = event.currentTarget;
 	const url = form.action;
-    console.log(typeof form);
 
 	try {
 		const formData = new FormData(form);
@@ -60,27 +59,19 @@ async function handleFormSubmit(event) {
 
 		if(responseData){
             alert("Success");
-            location.reload();
-            document.location = "index.html";
-            
         }
 	} catch (error) {
 		console.error(error);
 	}
 }
 
-function checkPage(){
-    const signUpForm = document.getElementById("registerForm");
-
-    const exampleForm = document.getElementById("loginForm");
-
-    if(signUpForm){
-        signUpForm.addEventListener('submit', handleFormSubmit);
-    }
-    if(exampleForm){
-        exampleForm.addEventListener('submit', handleFormSubmit);
-    }
+const signUpPage = document.getElementById("registerForm");
+if(signUpPage){
+	signUpPage.addEventListener('submit',handleFormSubmit);
 }
 
-window.onload = checkPage;
 
+const loginPage = document.getElementById("login");
+if(loginPage){
+	loginPage.addEventListener('submit',handleFormSubmit);
+}
