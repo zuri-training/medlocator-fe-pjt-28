@@ -49,6 +49,7 @@ window.onscroll = function() {
  */
 async function handleFormSubmit(event) {
 	await event.preventDefault();
+	
 
 	const form = event.currentTarget;
 	const url = form.action;
@@ -59,9 +60,15 @@ async function handleFormSubmit(event) {
 
 		if(responseData){
             alert("Success");
-			document.location.assign("index.html");
+			if(event.path[0].id == "login"){
+				document.location.assign("dashboard.html");
+			}
+			if(event.path[0].id == "registerForm"){
+				document.location.assign("login.html");
+			}	
         }
 	} catch (error) {
+		alert("An error occurred. Check console for more details.");
 		console.error(error);
 	}
 }
