@@ -37,14 +37,14 @@
         <div class="form-container">
                 <h3 class="form-title">Pharmacy Log In</h3>
                 <p>Not a Pharmacy? <span><a href="search.html">Find your drugs here</a></span></p>
-                <form class="input-group">
+                <form class="input-group" method="POST" action="https://medlocator-pjt-28.herokuapp.com/api/v1/user/login" enctype="application/x-www-form-urlencoded" id="login">
                     <div>
-                        <label for="username">Username</label>
-                        <input class="input-field" id="username "type="text" required autofocus>
+                        <label for="username">Email</label>
+                        <input class="input-field" id="username" name="email" type="text" required autofocus>
                     </div>
                     <div>
                         <label for="password">Password</label>
-                        <input class="input-field" id="password" type="password" required aria-describedby="password-hint">
+                        <input class="input-field" id="password" type="password" name="password" required aria-describedby="password-hint">
                     </div>
                     <button type="submit" class="login-btn">LOG IN</button>
                     <div class="chechbtx-section">
