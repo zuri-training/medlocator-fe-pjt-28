@@ -59,6 +59,7 @@ async function handleFormSubmit(event) {
 
 		if(responseData){
             alert("Success");
+			document.location.assign("index.html");
         }
 	} catch (error) {
 		console.error(error);
