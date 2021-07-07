@@ -27,7 +27,7 @@
             <div class="content">
                 <div class="pages">
                     <a href="index.html">Medlocator ></a>
-                    <a href="login.html">Pharmacies ></a>
+                    <a href="login.html">Pharmacy Log In ></a>
                     <a href="signup.html">Pharmacy Sign up</a>
                 </div>
             </div>
@@ -39,24 +39,34 @@
         <div class="arrow-left"><a href="login.html"><i class="fas fa-arrow-left"></i></a></div>
         <div class="form-container">
             <h3 class="form-title">Pharmacy Sign Up</h3>
-            <form class="input-group">
+            <!-- <form class="input-group" action="#" method="post" onsubmit="postData()"> -->
+            <form class="input-group" id="registerForm" method="POST" action="https://medlocator-pjt-28.herokuapp.com/api/v1/user/register" enctype="application/x-www-form-urlencoded">
                 <div>
-                    <label for="pharnacy name">Pharmacy Name</label>
-                    <input class="input-field" id="pharmacy" type="text" required autofocus>
+                    <label for="name">Pharmacy Name</label>
+                    <input class="input-field" name="name" id="name" type="text" required autofocus>
                 </div>
                 <div>
                     <label for="email">Email</label>
-                    <input class="input-field" id="email" type="email" required>
+                    <input class="input-field" name="email" id="email" type="email" required>
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input class="input-field" id="password" type="password">
+                    <input class="input-field" name="password" id="password" type="password">
                 </div>
+                <div>
+                    <label for="passwordConfirm">Confirm Password</label>
+                    <input class="input-field" name="passwordConfirm" id="passwordConfirm" type="password">
+                </div>
+                <div>
+                    <label for="address">Address</label>
+                    <input class="input-field" name="address" id="address" type="text">
+                </div>                
                 <div class="chechbtx-section">
                     <div>
                         <input type="checkbox" name="remember me" class="check-box"> <span>I agree to terms and condition.</span>
                     </div>
                 </div>
+                <!-- <button type="submit" class="login-btn">SIGN UP</button> -->
                 <button type="submit" class="login-btn">SIGN UP</button>
             </form>
         </div>

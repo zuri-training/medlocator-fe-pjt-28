@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo.png">
+    <title>MedLocator | Find your Meds Here</title>
+</head>
+<body>
+    <!-- HEADER SECTION  -->
+    <header>
+        <nav class="navbar">
+            <div class="content">
+                <div class="brand"><a href="index.html"><img src="/assets/img/brand.png" alt="Brand"></a></div>
+                <div class="logo"><img src="/assets/img/logo.png" alt="Logo"></div>
+            </div>
+        </nav>
+    </header>
+    <!-- INFO SECTION -->
+    <div class="info">
+        <div class="cancel"><a href="search.html"><i class="fas fa-times"></i></a></div>
+        <h2>FAQs</h2>
+    <div>
+        <div class="faq">
+           <ul>
+               <li>
+                   <a href="#" class="app-btn">Can I make an order on this app?
+                       <span class="fas fa-caret-down first"></span>
+                   </a>
+                <ul class="app-show">
+                    <li class="first">No, this applicatin is mainly for patients to find the nearest pharmacy that has the medicine they are looking for.</li>
+                </ul>
+                </li>
+                <li>
+                    <a href="#" class="pharm-btn">Can i chat with a pharmacist?
+                        <span class="fas fa-caret-down second"></span>
+                    </a>
+                <ul class="pharm-show">
+                    <li class="first">No, this applicatin is mainly for patients to find the nearest pharmacy that has the medicine they are looking for.</li>
+                </ul>
+                </li>
+                <li>
+                    <a href="#" class="drug-btn">Is the drug price fixed or negotiable?
+                        <span class="fas fa-caret-down third"></span>
+                     </a>
+                    <ul class="drug-show">
+                        <li class="first">No, this applicatin is mainly for patients to find the nearest pharmacy that has the medicine they are looking for.</li>
+                    </ul>                        
+                </li>
+           </ul>
+        </div>
+     <div class="bottom">
+         <div class="copy-right">&copy; 2021, MedLocator. All rights reserved</div>
+    </div>
+
+    <script>
+    $('.app-btn').click(function(){
+        $('div ul .app-show').toggleClass("show");
+        $('div ul .first').toggleClass("rotate");
+    });
+    $('.pharm-btn').click(function(){
+        $('div ul .pharm-show').toggleClass("show1");
+        $('div ul .second').toggleClass("rotate");
+    });
+    $('.drug-btn').click(function(){
+        $('div ul .drug-show').toggleClass("show2");
+        $('div ul .third').toggleClass("rotate");
+    });
+    </script>
+
+    </body>
+    </html>
