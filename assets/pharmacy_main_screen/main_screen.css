@@ -12,10 +12,7 @@
   height: 15px;
   left: 20px;
   top: 10px;
-  font-family: sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
+
   line-height: 16px;
 }
 .pages a {
@@ -59,7 +56,6 @@ h2 {
   display: block;
   width: 100%;
   font-weight: 600;
-  font-style: normal;
   line-height: 10px;
   margin-left: 10px;
 }
@@ -78,12 +74,11 @@ i {
 
 .pharmacy-main-screen-footer {
   position: absolute;
-  width: 220px;
+  width: 240px;
   height: 14px;
   left: 615px;
   top: 850px;
   padding-bottom: 30px;
-  font-family: Lato;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
