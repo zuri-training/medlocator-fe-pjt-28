@@ -67,7 +67,7 @@ async function handleFormSubmit(event) {
 		if((responseData) && (loginPage)){
 			responseData => responseData.text();
 			console.log(responseData);			
-			document.location = "dashboard.html"
+			document.location = "main-screen.html"
         }
 	} catch (error) {
 		console.error(error);
