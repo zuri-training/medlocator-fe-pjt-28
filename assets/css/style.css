@@ -336,7 +336,7 @@ footer .copy-right {
     justify-content: center;
 }
 
-.form .form-container .form-title{
+.form .form-container .form-title {
     font-size: 18px;
     font-weight: 600;
     color: var(--dark-gray);
@@ -405,7 +405,7 @@ footer .copy-right {
     transition: .5s ease;
 }
 
-.login-btn:hover{
+.login-btn:hover {
     background: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
@@ -531,225 +531,7 @@ footer .copy-right {
     color: var(--primary-color);
 }
 
-/*     CONTACT PAGE CSS    */
-.bar {
-    position: fixed;
-    top: 5.5rem;
-    width: 100%;
-    background: var(--white-color);
-    z-index: 1;
-}
-.bar .bar-content {
-    height: 40px;
-    background: var(--primary-color);  
-}
-.bar h2{
-    margin: 0.5em 0em 1em 2em;
-}
-.form .contact-container {
-    position: absolute;
-    width: 80%;
-    height: 80vh;
-    background: var(--white-color);
-    padding: 3em 0em 0em 2.4em;
-}
-.contact-container > div{
-    margin-top: 2em;
-}
-.contact-container select{
-    padding: 0.8em;
-    border: 1px solid var(--primary-color);
-    border-radius: 6px;
-    width: 450px;
-    margin-right: 4em;
-}
-#fullname, #comment{
-    border: 1px solid var(--primary-color); 
-    width: 91.4%;
-    border-radius: 6px;
-}
-#comment{
-    height: 13em;
-}
-input[placeholder="Write a comment"]{
-    padding-bottom: 9em;
-}
-.contact-container button{
-    display: inline-block;
-    border: 1px solid var(--primary-color);    
-    border-radius: 6px;
-    padding: 1em;
-    width: 140px;
-}
-.send-btn{
-        background: var(--primary-color);
-        font-size: 1rem;
-        font-weight: 600;
-        box-shadow: var(--shadow);
-        transition: .5s ease;
-        text-decoration: none;
-        float: right;
-        margin-right: 4em;
-}
-.send-btn a{
-    color: var(--white-color);
-}
-.cancel-btn{
-    background: var(--white-color);
-    box-shadow: var(--shadow);
-}
-.cancel-btn a{
-    color: var(--primary-color);
-}
-
-/*     ABOUT PAGE CSS     */
-h2 {
-    color: var(--primary-color);
-    font-weight: 500;
-    margin-bottom: 0.7em;
-}
-.info{
-    margin: 8em 2em 1em 2em;
-}
-.footer-content{
- font-weight: 400;
-}
-.info .cancel .fas{
-    color: black;
-    float: right;
-    margin-top: 0.2rem;
-    font-size: 1.5rem;
-}
-.cancel .fas:hover{
-    transform: scale(1.5);
-}
-.bottom{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-     position: absolute;
-    bottom: 1em; 
-}
-.bottom .copy-right {
-    font-size: 1rem;
-    color: #13347454;
-}
-
-/*        CONTACTUS-SENT PAGE CSS    */
-.sent-content{
-     width: 80%;
-    justify-content: center;
-    margin: auto;
-    height: 80vh;
-}
-.sent-content > div{
-    margin-top: 2.4em;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.sent-content > div > p{
-    padding-bottom: 1em;
-    font-weight: 500;
-}
-.sent{
-    font-weight: 500;
-    opacity: 0.6;
-}
-.check{
-    margin-top: 2em;
-    border-radius: 100%;
-    width: 240px;
-    height: 240px;
-    background-color: var(--primary-color);
-}
-.check .fas{
-    color: white;
-    width: 100%;
-    font-size: 95px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 0.8em;
-}
-
-    /* FAQ PAGE CSS   */
-.faq{
-    position: fixed;
-    font-weight: 400;
-    line-height: 39px;
-    letter-spacing: 1px;
-    width: 90%;
-}
-div ul{
-    list-style: none;
-}
-div ul li {
-    position: relative;
-    border-bottom: 1px solid rgb(214, 202, 202);
-    border-left: 4px solid transparent;
-}
-.first:hover{
-    border-left-color: var(--primary-color);
-    background-color: rgb(247, 245, 245);
-}
-div ul li a{
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-}
-div ul ul{
-    position: static;
-    display: none;
-}
-div ul .app-show.show, div ul .pharm-show.show1, div ul .drug-show.show2{
-    display:block;
-}
-div ul ul li {
-    padding-left: 9px;
-}
-div ul li a span{
-    color:  var(--primary-color);
-    position: absolute;
-    top: 50%;
-    right: -2%;
-    transform: translateY(-50%);
-    transition: transform 0.4s;
-}
-div ul li a span.rotate{
-    transform: translateY(-50%) rotate(-180deg);
-}
-
 /*        RESPONSIVE MEDIA QUERIES       */
-@media (max-width:480px){
-
-    /* contact page */
-    .form .contact-container{ 
-         height: 100vh; 
-         margin-top: 8em;
-     } 
-    .contact-container > div{
-        margin-top: 1em;
-    }
-    .contact-container .form-title{
-        margin-top: -1em;
-        font-weight: 300;
-    }
-    .contact-container select{
-        width: 40%;
-        margin-right: 1em;
-    }
-    .send-btn{
-        margin-top: 1.5em;
-    }
-
-    /* FAQ page */
-    .faq{
-        width: 70%;
-    }
-}
-
 @media (max-width: 800px) {
     .hero .container .headline {
         font-size: 5rem;
@@ -775,7 +557,6 @@ div ul li a span.rotate{
         margin: 2rem 1.5rem;
     }
 
-
     /* Search page  */
     .search-container .search-area .fas {
         font-size: 3.5rem;
@@ -786,20 +567,8 @@ div ul li a span.rotate{
     .search-container .search-area .topic {
         font-size: 2rem;
     }
+    
 }
-
-    @media screen and (max-width: 800px) and (min-width: 480px) {
-
-        /* Contact Us Page */
-        .contact-container select{
-            width: 40%;
-        }
-        .form .contact-container{
-            height: 60vh;
-            margin-top: -18em;
-        }
-    }
-
 
 @media (max-width: 1160px) {
     .chechbtx-section {
