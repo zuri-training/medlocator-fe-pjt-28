@@ -724,6 +724,19 @@ footer .copy-right {
     color: var(--primary-color);
 }
 
+/* SIGNUP-CONFIRMATION PAGE CSS  */
+.check-box {
+    width: 100%;
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+.check-box .fas {
+    font-size: 14rem;
+    color: var(--primary-color);
+}
+
 /*        RESPONSIVE MEDIA QUERIES       */
 @media (max-width: 800px) {
     .hero .container .logo {
