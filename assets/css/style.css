@@ -944,7 +944,7 @@ footer .copy-right {
         font-size: 1.5rem;
         padding-top: 1rem;
     }
-
+}
 @media (max-width: 1160px) {
     .chechbtx-section {
         flex-direction: column;
