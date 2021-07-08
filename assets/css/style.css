@@ -117,15 +117,9 @@ ul {
 /* CTA SECTION  */
 .cta .container {
     width: 90%;
-    height: 50vh;
-    margin: 1rem auto;
+    height: 20vh;
+    margin: 5rem auto;
     text-align: center;
-}
-
-.cta .container .title {
-    font-size: 3rem;
-    font-weight: 400;
-    color: var(--dark-gray);
 }
 
 .cta .container .buttons {
@@ -169,23 +163,6 @@ ul {
     color: var(--white-color);
 }
 
-
-/* PHARMACEUTICAL SECTION  */
-.pharmaceutical {
-    width: 100%;
-    height: 80vh;
-    background: url(/assets/img/banner.png) no-repeat center;
-    background-size: cover;
-    border-radius: 0 0 15px 15px;  
-}
-
-.pharmaceutical .container {
-    width: 90%;
-    height: 60vh;
-    margin: auto;
-    display: flex;
-    align-items: center;
-}
 /* FEATURES SECTION  */
 .feature {
     width: 100%;
@@ -218,38 +195,10 @@ ul {
     width: 90%;
     height: 50vh;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
-
-.pharmaceutical .container h2 {
-    font-size: 70px;
-    font-weight: 400;
-    color: var(--primary-color);
-    width: 460px;
-    z-index: 1;
-}
-
-.pharmaceutical img {
-    width: 400px;
-}
-
-.pharmaceutical .right {
-    position: absolute;
-    top: 153%;
-    right: 0;
-    z-index: 0;
-}
-
-.detail {
-    width: 90%;
-    height: 25vh;
-    margin: 2rem auto;
-}
-
-.detail p {
-    font-size: 3rem;
-    font-weight: 400;
-    color: var(--dark-gray);}
 .feature .container .features .first .content  .textbox, .second .textbox-2 {
     font-size: 5rem;
     color: var(--primary-color);
@@ -417,6 +366,7 @@ footer {
     height: 40vh;
     margin: 1rem auto;
     border-top: 2px solid var(--very-light-gray);
+    
 }
 
 footer .container {
@@ -534,7 +484,7 @@ footer .copy-right {
     justify-content: center;
 }
 
-.form .form-container .form-title{
+.form .form-container .form-title {
     font-size: 18px;
     font-weight: 600;
     color: var(--dark-gray);
@@ -845,124 +795,124 @@ input[placeholder="Write a comment"]{
     color: var(--primary-color);
 }
 
-/*     ABOUT PAGE CSS     */
-h2 {
-    color: var(--primary-color);
-    font-weight: 500;
-    margin-bottom: 0.7em;
-}
-.info{
-    margin: 8em 2em 1em 2em;
-}
-.footer-content{
- font-weight: 400;
-}
-.info .cancel .fas{
-    color: black;
-    float: right;
-    margin-top: 0.2rem;
-    font-size: 1.5rem;
-}
-.cancel .fas:hover{
-    transform: scale(1.5);
-}
-.bottom{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-     position: absolute;
-    bottom: 1em; 
-}
-.bottom .copy-right {
-    font-size: 1rem;
-    color: #13347454;
-}
-
-/*        CONTACTUS-SENT PAGE CSS    */
-.sent-content{
-     width: 80%;
-    justify-content: center;
-    margin: auto;
-    height: 80vh;
-}
-.sent-content > div{
-    margin-top: 2.4em;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.sent-content > div > p{
-    padding-bottom: 1em;
-    font-weight: 500;
-}
-.sent{
-    font-weight: 500;
-    opacity: 0.6;
-}
-.check{
-    margin-top: 2em;
-    border-radius: 100%;
-    width: 240px;
-    height: 240px;
-    background-color: var(--primary-color);
-}
-.check .fas{
-    color: white;
-    width: 100%;
-    font-size: 95px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 0.8em;
-}
+    /*     ABOUT PAGE CSS     */
+    h2 {
+        color: var(--primary-color);
+        font-weight: 500;
+        margin-bottom: 0.7em;
+    }
+    .info{
+        margin: 8em 2em 1em 2em;
+    }
+    .footer-content{
+     font-weight: 400;
+    }
+    .info .cancel .fas{
+        color: black;
+        float: right;
+        margin-top: 0.2rem;
+        font-size: 1.5rem;
+    }
+    .cancel .fas:hover{
+        transform: scale(1.5);
+    }
+    .bottom{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+         position: absolute;
+        bottom: 1em; 
+    }
+    .bottom .copy-right {
+        font-size: 1rem;
+        color: #13347454;
+    }
+    
+        /*        CONTACTUS-SENT PAGE CSS    */
+    .sent-content{
+        width: 80%;
+       justify-content: center;
+       margin: auto;
+       height: 80vh;
+    }
+    .sent-content > div{
+       margin-top: 2.4em;
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+    .sent-content > div > p{
+       padding-bottom: 1em;
+       font-weight: 500;
+    }
+    .sent{
+       font-weight: 500;
+       opacity: 0.6;
+    }
+    .check{
+       margin-top: 2em;
+       border-radius: 100%;
+       width: 240px;
+       height: 240px;
+       background-color: var(--primary-color);
+    }
+    .check .fas{
+       color: white;
+       width: 100%;
+       font-size: 95px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       margin-top: 0.8em;
+    }
 
     /* FAQ PAGE CSS   */
-.faq{
-    position: fixed;
-    font-weight: 400;
-    line-height: 39px;
-    letter-spacing: 1px;
-    width: 90%;
-}
-div ul{
-    list-style: none;
-}
-div ul li {
-    position: relative;
-    border-bottom: 1px solid rgb(214, 202, 202);
-    border-left: 4px solid transparent;
-}
-.first:hover{
-    border-left-color: var(--primary-color);
-    background-color: rgb(247, 245, 245);
-}
-div ul li a{
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-}
-div ul ul{
-    position: static;
-    display: none;
-}
-div ul .app-show.show, div ul .pharm-show.show1, div ul .drug-show.show2{
-    display:block;
-}
-div ul ul li {
-    padding-left: 9px;
-}
-div ul li a span{
-    color:  var(--primary-color);
-    position: absolute;
-    top: 50%;
-    right: -2%;
-    transform: translateY(-50%);
-    transition: transform 0.4s;
-}
-div ul li a span.rotate{
-    transform: translateY(-50%) rotate(-180deg);
-}
+    .faq{
+        position: fixed;
+        font-weight: 400;
+        line-height: 39px;
+        letter-spacing: 1px;
+        width: 90%;
+    }
+    div ul{
+        list-style: none;
+    }
+    div ul li {
+        position: relative;
+        border-bottom: 1px solid rgb(214, 202, 202);
+        border-left: 4px solid transparent;
+    }
+    .first:hover{
+        border-left-color: var(--primary-color);
+        background-color: rgb(247, 245, 245);
+    }
+    div ul li a{
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+    }
+    div ul ul{
+        position: static;
+        display: none;
+    }
+    div ul .app-show.show, div ul .pharm-show.show1, div ul .drug-show.show2{
+        display:block;
+    }
+    div ul ul li {
+        padding-left: 9px;
+    }
+    div ul li a span{
+        color:  var(--primary-color);
+        position: absolute;
+        top: 50%;
+        right: -2%;
+        transform: translateY(-50%);
+        transition: transform 0.4s;
+    }
+    div ul li a span.rotate{
+        transform: translateY(-50%) rotate(-180deg);
+    }
 
 /*        RESPONSIVE MEDIA QUERIES       */
 @media (max-width:480px){
@@ -987,63 +937,14 @@ div ul li a span.rotate{
         margin-top: 1.5em;
     }
 
+
+
     /* FAQ page */
     .faq{
         width: 70%;
     }
 }
 
-@media (max-width: 800px) {
-    .hero .container .headline {
-        font-size: 5rem;
-    }
-    .hero .right {
-        display: none;
-    }
-    .cta .container .title {
-        font-size: 2.5rem;
-    }
-    .cta .container .buttons {
-        flex-direction: column;
-        gap: 20px;
-        margin: 4rem 0;
-    }
-    .pharmaceutical .right {
-        display: none;
-    }
-    .pharmaceutical .container h2 {
-        font-size: 5rem;
-    }
-    footer .container .nav-links li {
-        margin: 2rem 1.5rem;
-    }
-
-
-    /* Search page  */
-    .search-container .search-area .fas {
-        font-size: 3.5rem;
-        padding-top: 3rem;
-        padding-bottom: 0;
-    }
-
-    .search-container .search-area .topic {
-        font-size: 2rem;
-    }
-}
-
-    @media screen and (max-width: 800px) and (min-width: 480px) {
-
-        /* Contact Us Page */
-        .contact-container select{
-            width: 40%;
-        }
-        .form .contact-container{
-            height: 60vh;
-            margin-top: -18em;
-        }
-    }
-
-/*        RESPONSIVE MEDIA QUERIES       */
 @media (max-width: 800px) {
     .hero .container .logo {
         width: 5rem;
@@ -1251,6 +1152,19 @@ div ul li a span.rotate{
         padding-top: 1rem;
     }
 }
+
+    @media screen and (max-width: 800px) and (min-width: 480px) {
+
+        /* Contact Us Page */
+        .contact-container select{
+            width: 40%;
+        }
+        .form .contact-container{
+            height: 60vh;
+            margin-top: -18em;
+        }
+    }
+
 
 @media (max-width: 1160px) {
     .chechbtx-section {
