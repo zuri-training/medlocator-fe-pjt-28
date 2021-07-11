@@ -1,6 +1,11 @@
 window.onload = () => {
-const pharm_name = document.getElementById("pharmacy_name");
-const pharm_phone = document.getElementById("pharmacy_phone");
+const pharm_details = document.getElementById("pharmacy_details");
 const store = JSON.parse(sessionStorage.getItem("store"));
-pharm_name.innerText = store.store.name;
-pharm_phone.innerText = store.store.contact.phone || "N/A";}
+const {name, contact} = store;
+if(name && contact){
+    pharm_details.innerHTML = `${name} <br> ${contact.phone}`;
+}
+else{
+    pharm_details.innerHTML = name;
+}
+};
