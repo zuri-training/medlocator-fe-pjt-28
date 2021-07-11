@@ -59,7 +59,7 @@ async function handleFormSubmit(event) {
 
 		if((responseData) && (signUpPage)){
             alert(`Form submitted Successfully! Click Ok to go to the Login Page.
-			You can then log into your Dashboard`);
+			After verifying your email, you can then log into your Dashboard`);
 			responseData => responseData.text();
 			console.log(responseData);			
 			document.location = "login.html"
@@ -69,6 +69,11 @@ async function handleFormSubmit(event) {
 			console.log(responseData);			
 			document.location = "main-screen.html"
         }
+		if((responseData) && (searchPage)){
+			responseData => responseData.text();
+			console.log(responseData);
+			alert("Success");
+		}
 	} catch (error) {
 		console.error(error);
 	}
@@ -83,4 +88,27 @@ if(signUpPage){
 const loginPage = document.getElementById("login");
 if(loginPage){
 	loginPage.addEventListener('submit',handleFormSubmit);
+}
+
+const searchPage = document.getElementById("search");
+if(searchPage){
+	searchPage.addEventListener('submit',handleFormSubmit);
+}
+
+const geoButton = document.getElementById("geolocator");
+if(geoButton){
+	geoButton.addEventListener("click",geoLocate);
+}
+
+function geoLocate(){
+	if(navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(changeLocation,null,{enableHighAccuracy:true});
+	}
+}
+
+function changeLocation(pos){
+	const long = pos.coords.longitude;
+	const lat = pos.coords.latitude;
+	const location = document.getElementById("location");
+	location.value = [long,lat];
 }
