@@ -65,8 +65,8 @@ async function handleFormSubmit(event) {
 			document.location = "login.html";
         }
 		if((responseData) && (loginPage)){
-			responseData => responseData.text();
-			console.log(responseData);			
+			console.log(responseData);
+			sessionStorage.setItem("store",JSON.stringify(responseData.store));			
 			document.location = "main-screen.html";
         }
 		if((responseData) && (searchPage)){
