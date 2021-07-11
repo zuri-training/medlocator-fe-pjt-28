@@ -65,9 +65,12 @@ async function handleFormSubmit(event) {
 			document.location = "login.html";
         }
 		if((responseData) && (loginPage)){
-			responseData => responseData.text();
 			console.log(responseData);			
 			document.location = "main-screen.html";
+			const name = document.getElementById("pharmacy_name");
+			const phone = document.getElementById("pharmacy_phone");
+			name.innerText = responseData.store.name;
+			phone.innerText = responseData.store.contact.phone || "N/A";
         }
 		if((responseData) && (searchPage)){
 			responseData => responseData.text();
