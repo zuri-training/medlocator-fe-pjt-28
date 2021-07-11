@@ -19,7 +19,6 @@ window.onscroll = function() {
  */
  async function postFormDataAsJson({ url, formData }) {
 	const plainFormData = Object.fromEntries(formData.entries());
-	console.log(plainFormData);
 	const formDataJsonString = JSON.stringify(plainFormData);
 
 	const fetchOptions = {
