@@ -62,20 +62,33 @@ async function handleFormSubmit(event) {
 			After verifying your email, you can then log into your Dashboard`);
 			responseData => responseData.text();
 			console.log(responseData);			
-			document.location = "login.html"
+			document.location = "login.html";
         }
 		if((responseData) && (loginPage)){
 			responseData => responseData.text();
 			console.log(responseData);			
-			document.location = "main-screen.html"
+			document.location = "main-screen.html";
         }
 		if((responseData) && (searchPage)){
 			responseData => responseData.text();
 			console.log(responseData);
 			alert("Success");
 		}
+
+		if((responseData) && (resetPage)){
+			responseData => responseData.text();
+			console.log(responseData);
+			document.location = "reset-confirmation.html";
+		}
+
+		if((responseData) && (contactPage)){
+			responseData => responseData.text();
+			console.log(responseData);
+			document.location = "contactUs-sent.html";
+		}
 	} catch (error) {
 		console.error(error);
+		alert("An error occurred.");
 	}
 }
 
@@ -111,4 +124,14 @@ function changeLocation(pos){
 	const lat = pos.coords.latitude;
 	const location = document.getElementById("location");
 	location.value = [long,lat];
+}
+
+const resetPage = document.getElementById("reset");
+if(resetPage){
+	resetPage.addEventListener("submit",handleFormSubmit);
+}
+
+const contactPage = document.getElementById("contact");
+if(contactPage){
+	contactPage.addEventListener("submit",handleFormSubmit);
 }

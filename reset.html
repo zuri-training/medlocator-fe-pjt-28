@@ -38,14 +38,10 @@
         <div class="form-container">
                 <h3 class="form-title">Forgot your Password?</h3>
                 <p class="p-detail">Enter your registered Pharmacy name and email <br>address to receive your password reset email</p>
-                <form class="input-group">
+                <form class="input-group" action="https://medlocator-pjt-28.herokuapp.com/api/v1/user/forgot-password" method="POST" id="reset">
                     <div>
-                        <label for="username">Pharmacy Name</label>
-                        <input class="input-field" id="username "type="text" required autofocus placeholder="MedPlus Pharmacy">
-                    </div>
-                    <div>
-                        <label for="password">Email</label>
-                        <input class="input-field" id="password" type="email" required placeholder="Medpluspharm@gmail.com">
+                        <label for="email">Email</label>
+                        <input class="input-field" name="email" type="email" required placeholder="Medpluspharm@gmail.com">
                     </div>
                     <button type="submit" class="login-btn">SEND EMAIL</button>
                     <div class="nav-reg">
