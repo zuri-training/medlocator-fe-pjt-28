@@ -70,9 +70,14 @@ async function handleFormSubmit(event) {
 			document.location = "main-screen.html";
         }
 		if((responseData) && (searchPage)){
-			responseData => responseData.text();
-			console.log(responseData);
-			alert("Success");
+			console.log(responseData.text());
+			if(responseData.message == "Drug stores sorted"){
+				sessionStorage.setItem("drugSearchResults",responseData.body);
+				alert("success");
+			}
+			else if(responseData.message == "Drug not found"){
+				alert("Drug not found");
+			}
 		}
 
 		if((responseData) && (resetPage)){
