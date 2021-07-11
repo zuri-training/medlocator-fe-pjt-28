@@ -44,16 +44,16 @@
             <div class="search-area">
                 <div><i class="fas fa-map-marker-alt"></i></div>
                 <div class="topic">Find a Pharmacy near you</div>
-                <form class="input-group">
+                <form method="POST" class="input-group" action="https://medlocator-pjt-28.herokuapp.com/api/v1/search" id="search">
                     <div>
-                        <input class="input-field" type="text" name="location" placeholder="Enter your location">
+                        <input class="input-field" type="text" name="location" placeholder="Enter location; house number, street, city, state, zip)" id="location">
+                    </div>
+                    <div><button id="geolocator" type="button">Use your current location instead</button>
                     </div>
                     <div>
-                        <input class="input-field" type="text" name="location" placeholder="Name of drug">
+                        <input class="input-field" type="text" name="drug" placeholder="Name of drug">
                     </div>
-                    <button>Search</button>
-                    <div class="or">OR</div>
-                    <div><a href="">Use your current location</a></div>
+                    <button type="submit">Search</button>
                 </form>
             </div>
         </div>
