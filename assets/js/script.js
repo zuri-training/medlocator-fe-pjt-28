@@ -123,7 +123,7 @@ function changeLocation(pos){
 	const long = pos.coords.longitude;
 	const lat = pos.coords.latitude;
 	const location = document.getElementById("location");
-	location.value = [long,lat];
+	location.value = [lat,long];
 }
 
 const resetPage = document.getElementById("reset");
