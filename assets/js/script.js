@@ -81,12 +81,12 @@ async function handleFormSubmit(event) {
         }
 		if((Object.keys(responseData).length) && (searchPage)){
 			console.log(responseData);
-			if(responseData.message == "Drug stores sorted"){
-				sessionStorage.setItem("drugSearchResults",responseData.body);
-				alert("success");
+			if(responseData.status == "success"){
+				sessionStorage.setItem("drugSearchResults",JSON.stringify(responseData.body));
+				document.location = "pharmacy-direction.html";
 			}
-			else if(responseData.message == "Drug not found"){
-				alert("Drug not found");
+			else if(responseData.status == "failure"){
+				alert(`${responseData.message}`);
 			}
 		}
 
