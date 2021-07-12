@@ -3,8 +3,49 @@
   padding: 0px;
   box-sizing: border-box;
 }
+.hero {
+  background: url(/assets/img/bg.png) no-repeat center;
+  top: 0rem;
+}
+.hero img {
+  width: 400px;
+}
+
+.hero .right {
+  position: absolute;
+  top: 114px;
+  right: 0;
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  height: 80vh;
+}
+
+.hero .container .headline {
+  font-size: 72px;
+  font-weight: 400;
+  color: var(--primary-color);
+  width: 460px;
+  z-index: 1;
+  margin-right: 750px;
+}
 .cta .container {
-  height: 20vh;
+  width: 90%;
+  height: 15vh;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.cta .container .title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--dark-gray);
 }
 
 .search-result a {
@@ -37,7 +78,7 @@
 }
 .cards {
   width: 75%;
-  margin: 10px auto 45px auto;
+  margin: 20px auto 45px auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 10px;
