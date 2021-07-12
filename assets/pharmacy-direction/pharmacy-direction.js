@@ -132,6 +132,7 @@ window.onload = () => {
         changeIndex(pharmacyMarker);
 
         // Dynamically render the drugs and stores
+        // Number 3 is used in order to have 3 cards in a row, purely a style choice
         const productCardSection = document.getElementById("product_cards");
         const numberOfSections = Math.ceil(resultLength/3);
 
