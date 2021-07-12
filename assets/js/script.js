@@ -31,13 +31,16 @@ window.onscroll = function() {
 	};
 
 	const response = await fetch(url, fetchOptions);
+	let data = {};
+	let error = {};
 
 	if (!response.ok) {
-		const errorMessage = await response.text();
-		throw new Error(errorMessage);
+		error = await response.json();
+	}else{
+		data = await response.json();
 	}
-
-	return response.json();
+	resArr = new Array(data,error);
+	return resArr;
 }
 
 /**
@@ -55,33 +58,45 @@ async function handleFormSubmit(event) {
 
 	try {
 		const formData = new FormData(form);
-		const responseData = await postFormDataAsJson({ url, formData });
+		const response = await postFormDataAsJson({ url, formData });
+		const responseData = response[0];
+		const responseError = response[1];
 
-		if((responseData) && (signUpPage)){
+		if(Object.keys(responseError).length){
+			alert(`Error ${responseError.status}: ${responseError.message}`);
+			console.error(responseError);
+		}
+
+		if((Object.keys(responseData).length) && (signUpPage)){
             alert(`Form submitted Successfully! Click Ok to go to the Login Page.
 			After verifying your email, you can then log into your Dashboard`);
 			responseData => responseData.text();
 			console.log(responseData);			
 			document.location = "login.html";
         }
-		if((responseData) && (loginPage)){
+		if((Object.keys(responseData).length) && (loginPage)){
 			console.log(responseData);
 			sessionStorage.setItem("store",JSON.stringify(responseData.store));			
 			document.location = "main-screen.html";
         }
-		if((responseData) && (searchPage)){
-			responseData => responseData.text();
+		if((Object.keys(responseData).length) && (searchPage)){
 			console.log(responseData);
-			alert("Success");
+			if(responseData.status == "success"){
+				sessionStorage.setItem("drugSearchResults",JSON.stringify(responseData.body));
+				document.location = "pharmacy-direction.html";
+			}
+			else if(responseData.status == "failure"){
+				alert(`${responseData.message}`);
+			}
 		}
 
-		if((responseData) && (resetPage)){
+		if((Object.keys(responseData).length) && (resetPage)){
 			responseData => responseData.text();
 			console.log(responseData);
 			document.location = "reset-confirmation.html";
 		}
 
-		if((responseData) && (contactPage)){
+		if((Object.keys(responseData).length) && (contactPage)){
 			responseData => responseData.text();
 			console.log(responseData);
 			document.location = "contactUs-sent.html";
@@ -123,7 +138,7 @@ function changeLocation(pos){
 	const long = pos.coords.longitude;
 	const lat = pos.coords.latitude;
 	const location = document.getElementById("location");
-	location.value = [long,lat];
+	location.value = [lat,long];
 }
 
 const resetPage = document.getElementById("reset");
