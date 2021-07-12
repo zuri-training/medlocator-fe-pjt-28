@@ -66,40 +66,41 @@ async function handleFormSubmit(event) {
 			alert(`Error ${responseError.status}: ${responseError.message}`);
 			console.error(responseError);
 		}
-
-		if((Object.keys(responseData).length) && (signUpPage)){
-            alert(`Form submitted Successfully! Click Ok to go to the Login Page.
-			After verifying your email, you can then log into your Dashboard`);
-			responseData => responseData.text();
-			console.log(responseData);			
-			document.location = "login.html";
-        }
-		if((Object.keys(responseData).length) && (loginPage)){
-			console.log(responseData);
-			sessionStorage.setItem("store",JSON.stringify(responseData.store));			
-			document.location = "main-screen.html";
-        }
-		if((Object.keys(responseData).length) && (searchPage)){
-			console.log(responseData);
-			if(responseData.status == "success"){
-				sessionStorage.setItem("drugSearchResults",JSON.stringify(responseData.body));
-				document.location = "pharmacy-direction.html";
+		else if(Object.keys(responseData).length){
+			if(signUpPage){
+				alert(`Form submitted Successfully! Click Ok to go to the Login Page.
+				After verifying your email, you can then log into your Dashboard`);
+				responseData => responseData.text();
+				console.log(responseData);			
+				document.location = "login.html";
 			}
-			else if(responseData.status == "failure"){
-				alert(`${responseData.message}`);
+			if(loginPage){
+				console.log(responseData);
+				sessionStorage.setItem("store",JSON.stringify(responseData.store));			
+				document.location = "main-screen.html";
 			}
-		}
-
-		if((Object.keys(responseData).length) && (resetPage)){
-			responseData => responseData.text();
-			console.log(responseData);
-			document.location = "reset-confirmation.html";
-		}
-
-		if((Object.keys(responseData).length) && (contactPage)){
-			responseData => responseData.text();
-			console.log(responseData);
-			document.location = "contactUs-sent.html";
+			if(searchPage){
+				console.log(responseData);
+				if(responseData.status == "success"){
+					sessionStorage.setItem("drugSearchResults",JSON.stringify(responseData.body));
+					document.location = "pharmacy-direction.html";
+				}
+				else if(responseData.status == "failure"){
+					alert(`${responseData.message}`);
+				}
+			}
+	
+			if(resetPage){
+				responseData => responseData.text();
+				console.log(responseData);
+				document.location = "reset-confirmation.html";
+			}
+	
+			if(contactPage){
+				responseData => responseData.text();
+				console.log(responseData);
+				document.location = "contactUs-sent.html";
+			}
 		}
 	} catch (error) {
 		console.error(error);
