@@ -113,7 +113,6 @@ window.onload = () => {
             .trim()
             .split(" ")
             .map((component,index)=>{
-                console.log(component);
                 if(index == 2){
                     return component.replace(numberRegex,resultLength);
                 }
