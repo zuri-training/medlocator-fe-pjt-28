@@ -1,0 +1,176 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.hero {
+  background: url(/assets/img/bg.png) no-repeat center;
+  top: 0rem;
+}
+.hero img {
+  width: 400px;
+}
+
+.hero .right {
+  position: absolute;
+  top: 114px;
+  right: 0;
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  height: 80vh;
+}
+
+.hero .container .headline {
+  font-size: 72px;
+  font-weight: 400;
+  color: var(--primary-color);
+  width: 460px;
+  z-index: 1;
+  margin-right: 750px;
+}
+.cta .container {
+  width: 90%;
+  height: 15vh;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.cta .container .title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--dark-gray);
+}
+
+.search-result a {
+  font-size: 18px;
+  position: absolute;
+  line-height: 30px;
+  width: 150px;
+  height: 30px;
+  top: 700px;
+  margin-left: 170px;
+  color: #0cb2b2;
+}
+.active-pharmacies a {
+  font-size: 18px;
+  position: absolute;
+  line-height: 30px;
+  width: 200px;
+  height: 30px;
+  top: 700px;
+  margin-left: 380px;
+  color: #263238;
+}
+#indicator {
+  width: 100px;
+  border: none;
+  background: #0cb2b2;
+  height: 1px;
+  transform: translateX(2px);
+  transition: transform 1s;
+}
+.cards {
+  width: 75%;
+  margin: 20px auto 45px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
+}
+.card {
+  border: 1px solid #0cb2b2;
+  width: 280px;
+  height: 350px;
+}
+img {
+  width: 50%;
+  margin-top: 40px;
+  margin-left: 25%;
+}
+.content {
+  text-align: center;
+  padding: 10px;
+}
+.content p {
+  font-size: 15px;
+  margin-top: 50px;
+  color: #000;
+  font-weight: 650;
+}
+
+h3 {
+  margin-top: 15px;
+}
+.pharmacy-direction-button {
+  margin-top: 50px;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #0cb2b2;
+  color: #ffff;
+  font-size: 17px;
+  padding: 5px 18px;
+  letter-spacing: 1.5px;
+}
+.pharmacy-direction-button:hover {
+  color: #ffff;
+  transition: 0.2s ease;
+}
+.container .pharmacy-dir-media-icons {
+  width: 90%;
+  margin: 60px auto auto auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .pharmacy-dir-media-icons ul li {
+  margin-right: 4rem;
+  margin-top: 5rem;
+}
+
+.container .pharmacy-dir-media-icons ul li a {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.container .pharmacy-dir-media-icons ul li a:hover {
+  color: var(--dark-gray);
+}
+
+/*Media Queries*/
+@media (max-width: 1024px) {
+  .search-result a {
+    margin-left: 170px;
+    top: 800px;
+  }
+  .active-pharmacies a {
+    margin-left: 350px;
+    top: 800px;
+  }
+  #indicator {
+    margin-left: px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    margin-top: 100px;
+  }
+  .search-result a {
+    margin-left: 3px;
+    top: 700px;
+  }
+  .active-pharmacies a {
+    margin-left: 175px;
+    top: 700px;
+  }
+  #indicator {
+    margin-left: 0px;
+  }
+}
