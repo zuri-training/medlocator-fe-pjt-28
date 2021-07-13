@@ -1,4 +1,4 @@
-window.onload = () => {
+
     // seed data
     /* const abc = [
         {
@@ -137,7 +137,8 @@ window.onload = () => {
         const productCardSection = document.getElementById("product_cards");
         const numberOfSections = Math.ceil(resultLength/3);
 
-        // product_cards > section
+        if(productCardSection){
+            // product_cards > section
         let counter = parseInt(`${resultLength}`);
         for(let i=0;i<numberOfSections;i++){
             // section > cards > card
@@ -192,49 +193,63 @@ window.onload = () => {
                 }
             }
         }
+        }    
+    }
 
-        // Render the map
-        async function initMap() {
-            map = new google.maps.Map(document.getElementById("map"), {
-              center: searcherLocation,
-              zoom: 7,
-              mapTypeControlOptions: {
-                  mapTypeIds: ["roadmap"]
-              }
+     // Render the map
+     async function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: searcherLocation,
+          zoom: 12,
+          mapTypeControlOptions: {
+              mapTypeIds: ["roadmap"]
+          }
+        });
+
+        const contentString = (store) => {
+            return `<h1>${store.name}</h1>
+            <div><p>${store.address}</p></div>
+            <div><p>${store.contact.phone}</p></div>`;
+        }
+        const infowindow = new google.maps.InfoWindow();
+        const queryString = window.location.search;
+        const params = new URLSearchParams(queryString);
+        const storeIndex = params.get("s");
+        sortedDrugStores.forEach(v => {
+            const latLng = new google.maps.LatLng(v.store.geometry);
+            const marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
             });
-
-            const contentString = (store) => {
-                return `<h1>${store.name}</h1>
-                <div><p>${store.address}</p></div>
-                <div><p>${store.phone}</p></div>`;
-            }
-            const infowindow = new google.maps.InfoWindow();
-            const queryString = window.location.search;
-            sortedDrugStores.forEach(v => {
-                const latLng = new google.maps.LatLng(v.store.geometry);
-                const marker = new google.maps.Marker({
-                    position: latLng,
-                    map: map,
+            marker.addListener("click",() => {
+                infowindow.setContent(contentString(v.store));
+                infowindow.open({
+                    anchor: marker,
+                    map,
+                    shouldFocus: true
                 });
-                marker.addListener("click",() => {
-                    infowindow.setContent(contentString(v));
+            });
+            if(storeIndex){
+                marker.setMap(null);
+                const storePlace = new google.maps.Marker({
+                    map,
+                    position: sortedDrugStores[storeIndex].store.geometry,
+                });
+                storePlace.addListener("click",()=>{
+                    infowindow.setContent(contentString(sortedDrugStores[storeIndex].store));
                     infowindow.open({
-                        anchor: marker,
+                        anchor: storePlace,
                         map,
                         shouldFocus: true
                     });
                 });
-                
+            }
+            
+        });
+        
+            const howFar = new google.maps.Marker({
+                map,
+                position: searcherLocation
             });
-                const howFar = new google.maps.Marker({
-                    map,
-                    position: searcherLocation
-                });
-        }
-
-        
-        
-
     }
     
-}
