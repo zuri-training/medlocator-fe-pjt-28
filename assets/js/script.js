@@ -83,6 +83,7 @@ async function handleFormSubmit(event) {
 				console.log(responseData);
 				if(responseData.status == "success"){
 					sessionStorage.setItem("drugSearchResults",JSON.stringify(responseData.body));
+					sessionStorage.setItem("searcherLocation",JSON.stringify(responseData.location));
 					document.location = "pharmacy-direction.html";
 				}
 				else if(responseData.status == "failure"){
