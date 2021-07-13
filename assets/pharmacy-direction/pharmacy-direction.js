@@ -103,6 +103,7 @@ window.onload = () => {
      //sessionStorage.setItem("drugSearchResults",JSON.stringify(abc));
     //sessionStorage.removeItem("drugSearchResults");
     const sortedDrugStores = JSON.parse(sessionStorage.getItem("drugSearchResults"));
+    const searcherLocation = JSON.parse(sessionStorage.getItem("searcherLocation"));
     if(sortedDrugStores){
         const resultLength = sortedDrugStores.length;
         // Function to change index
@@ -166,16 +167,21 @@ window.onload = () => {
 
                     const drugNameAndPrice = document.createElement("h3");
                     const pharmacyName = document.createElement("p");
+                    const pharmacyAddress = document.createElement("p");
                     const pharmacyLink = document.createElement("a");
                     content.appendChild(drugNameAndPrice);
                     content.appendChild(pharmacyName);
+                    content.appendChild(pharmacyAddress);
                     content.appendChild(pharmacyLink);
+
 
                     const drugName = sortedDrugStores[resultLength-counter].name;
                     const drugPrice = sortedDrugStores[resultLength-counter].price;
                     const storeName = sortedDrugStores[resultLength-counter].store.name;
+                    const storeAddress = sortedDrugStores[resultLength-counter].store.address;
                     drugNameAndPrice.innerHTML = `${drugName} <br> #${drugPrice}`;
                     pharmacyName.innerText = `${storeName}`;
+                    pharmacyAddress.innerText = `${storeAddress}`;
                     pharmacyLink.innerText = "Get Directions";
                     pharmacyLink.classList.add("pharmacy-direction-button");
                     pharmacyLink.href = `user-map-direction.html?s=${resultLength-counter}`;
@@ -186,6 +192,47 @@ window.onload = () => {
                 }
             }
         }
+
+        // Render the map
+        async function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+              center: searcherLocation,
+              zoom: 7,
+              mapTypeControlOptions: {
+                  mapTypeIds: ["roadmap"]
+              }
+            });
+
+            const contentString = (store) => {
+                return `<h1>${store.name}</h1>
+                <div><p>${store.address}</p></div>
+                <div><p>${store.phone}</p></div>`;
+            }
+            const infowindow = new google.maps.InfoWindow();
+            const queryString = window.location.search;
+            sortedDrugStores.forEach(v => {
+                const latLng = new google.maps.LatLng(v.store.geometry);
+                const marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                });
+                marker.addListener("click",() => {
+                    infowindow.setContent(contentString(v));
+                    infowindow.open({
+                        anchor: marker,
+                        map,
+                        shouldFocus: true
+                    });
+                });
+                
+            });
+                const howFar = new google.maps.Marker({
+                    map,
+                    position: searcherLocation
+                });
+        }
+
+        
         
 
     }
