@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="assets/pharmacy-direction/pharmacy-direction.css">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo.png">
-    <title>MedLocator | Find your Meds Here</title>
+    <title>MedLocator | Find your Medications Here</title>
 </head>
+
 <body>
-    <!-- HEADER SECTION  -->    
+    <!-- HEADER SECTION  -->
     <header>
         <nav class="navbar">
             <div class="content">
@@ -33,34 +35,107 @@
             </div>
         </div>
     </section>
-<!-- BUTTON SECTION  -->
+    <!-- BUTTON SECTION  -->
     <section>
         <div class="cta">
-             <div class="container">
-            <h2 class="title">MedLocator helps you locate a nearby pharmacy to buy your meds.</h2>
+            <div class="container">
+                <h2 class="title">MedLocator helps you locate a nearby pharmacy to buy your meds.</h2>
             </div>
         </div>
         </div>
     </section>
+<!-- Search Result Section  -->
 
-<section>
-
-    <div class="search-result">
-        <a href="pharmacy-direction.html" id="searchResultNumber">Search result (0)     <hr id="indicator"></a>
-
-    </div>
-
-    <div class="active-pharmacies">
-        <a href="user-map-direction.html" id="pharmacyResultNumber" class="fa fa-map-marker"> Active Pharmacies (0)</a>
-    </div>
-
-</section>
-
-<!-- Product cards Section  -->
-<div id="product_cards">
-</div>
-
-<!-- FOOTER SECTION  -->
+    <section class="tabs">
+        <div class="tab-container">
+            <div class="button-container">
+                <button onclick="showPanel(0)">Search result (6)</button>
+                <button onclick="showPanel(1)"><span><i class="fas fa-map-marker-alt"></i></span> Active
+                    Pharmacy (6)</button>
+            </div>
+            <div class="tab-panel">
+                <div class="cards">
+                    <div class="card">
+                        <img src="assets/img/Product  image.png">
+                        <div class="content">
+                            <h3>ClotriVog <br> #3000</h3>
+                            <p>MedPlus Pharmacy Allen</p>
+                            <a href="" class="pharmacy-direction-button">Get Direction</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/Product  image.png">
+                        <div class="content">
+                            <h3>ClotriVog <br> #2900</h3>
+                            <p>Joekem Pharmacy Allen</p>
+                            <a href="" class="pharmacy-direction-button">Get Direction</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/Product  image.png">
+                        <div class="content">
+                            <h3>ClotriVog <br> #2900</h3>
+                            <p>Nett Pharmacy Allen</p>
+                            <a href="" class="pharmacy-direction-button">Get Direction</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/Product  image.png">
+                        <div class="content">
+                            <h3>ClotriVog <br> #2950</h3>
+                            <p>Musaraq Pharmacy Allen</p>
+                            <a href="" class="pharmacy-direction-button">Get Direction</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/Product  image.png">
+                        <div class="content">
+                            <h3>ClotriVog <br> #2900</h3>
+                            <p>Myde Pharmacy Allen</p>
+                            <a href="" class="pharmacy-direction-button">Get Direction</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/Product  image.png">
+                        <div class="content">
+                            <h3>ClotriVog <br> #3200</h3>
+                            <p>Pontaic Pharmacy Allen</p>
+                            <a href="" class="pharmacy-direction-button">Get Direction</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-panel">
+                <div class="search-area">
+                    <input type="search" name="search" id="search" placeholder="Allen road, Allen, Ikeja"><button><i class="fas fa-search"></i></button>
+                    <div class="select-box">
+                        <select name="miles" id="miles">
+                            <option value="miles away">Miles away</option>
+                            <option value="10 miles">10 Miles</option>
+                            <option value="20 miles">20 Miles</option>
+                            <option value="30 miles">30 Miles</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="search-detail">
+                    <div class="address">
+                        <ol>
+                            <li>MedPlus Pharmacy <br>Plot 15, Allen road, Allen, Ikeja </li>
+                            <li>Joekem Pharmacy <br>23, Aromire street, Allen, Ikeja </li>
+                            <li>Nett Pharmacy <br>Plot 45, Allen road, Allen, Ikeja </li>
+                            <li>Musaruq Pharmacy <br>25, Majekodunmi street, Allen, Ikeja </li>
+                            <li>Myde Pharmacy <br>2, Salisu road, Allen, Ikeja </li>
+                            <li>Pontiac Pharmacy <br>8, Isaac John street, Allen, Ikeja </li>
+                        </ol>
+                    </div>
+                    <div class="map-box">
+                        <img src="/assets/img/map.png" alt="Map"> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER SECTION  -->
     <footer>
         <div class="container">
             <nav>

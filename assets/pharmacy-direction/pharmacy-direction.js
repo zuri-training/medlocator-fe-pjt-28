@@ -1,3 +1,21 @@
+// PHARMACY DIRECTION TABS SCRIPT 
+var tabButtons = document.querySelectorAll(".tab-container .button-container button");
+var tabPanels = document.querySelectorAll(".tab-container .tab-panel");
+
+function showPanel(panelIndex, colorCode) {
+    tabButtons.forEach(function(node){
+        node.style.borderBottom="";
+        node.style.color=""; 
+    })
+    tabButtons[panelIndex].style.borderBottom="2px solid #0cb2b2";
+    tabButtons[panelIndex].style.color="#0cb2b2";
+    tabPanels.forEach(function(node){
+        node.style.display="none";
+    })
+    tabPanels[panelIndex].style.display="block";
+}
+showPanel(0);
+
 
     // seed data
     /* const abc = [
