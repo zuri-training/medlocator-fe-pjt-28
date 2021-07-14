@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo.png">
+    <title>MedLocator | Find your Meds Here</title>
+</head>
+
+<body>
+    <!-- HEADER SECTION  -->
+    <header>
+        <nav class="navbar">
+            <div class="content">
+                <div class="brand"><a href="index.html"><img src="/assets/img/brand.png" alt="Brand"></a></div>
+                <div class="logo"><img src="/assets/img/logo.png" alt="Logo"></div>
+            </div>
+        </nav>
+    </header>
+    <div class="bar-content">
+        <div class="pages">
+            <a href="index.html">Medlocator ></a>
+            <a href="">Pharmacies ></a>
+            <a href="login.html">Pharmacy log in ></a>
+            <a href="inventory-update.html">Pharmacy Update Inventory</a>
+        </div>
+    </div>
+    <!-- HERO SECTION  -->
+    <section class="inventory">
+        <div class="catalog">
+
+        </div>
+        <div class="input-box">
+            <h2>Add New Products</h2>
+            <p>Keep your inventory updated!</p>
+            <form action="">
+                <div class="set-1">
+                    <div>
+                        <label for="Product SKU">Product SKU</label>
+                        <input type="text" name="product-sku" id="product-sku" placeholder="Enter product SKU">
+                    </div>
+                    <div>
+                        <label for="Product Name">Product Name</label>
+                        <input type="text" name="product-name" id="product-name" placeholder="Enter product name">
+                    </div>
+                </div>
+                <div class="set-2">
+                    <div>
+                        <label for="unit">Unit of measurement</label>
+                        <input type="text" name="unit" id="unit" placeholder="Enter unit of measurement">
+                    </div>
+                    <div>
+                        <label for="category">Category</label>
+                        <input type="text" name="category" id="category" placeholder="Enter product category">
+                    </div>
+                </div>
+                <h3>Quantities</h3>
+                <div class="select-group">
+                    <div>
+                        <label for="available">Available</label>
+                        <select name="available" id="">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="reserved">Reserved</label>
+                        <select name="reserved" id="">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="on hand">On hand</label>
+                        <select name="on hand" id="">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button-box">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="add-btn">Add Inventory</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
