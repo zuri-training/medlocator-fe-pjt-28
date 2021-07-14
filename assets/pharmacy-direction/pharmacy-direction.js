@@ -16,131 +16,15 @@ function showPanel(panelIndex, colorCode) {
 }
 showPanel(0);
 
-
-    // seed data
-    /* const abc = [
-        {
-            "name": "Paracetamol",
-            "price": 500,
-            "store": {
-                "name": "Pharmacy 1"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 450,
-            "store": {
-                "name": "Pharmacy 2"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 480,
-            "store": {
-                "name": "Pharmacy 3"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 460,
-            "store": {
-                "name": "Pharmacy 4"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 510,
-            "store": {
-                "name": "Pharmacy 5"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 490,
-            "store": {
-                "name": "Pharmacy 6"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 420,
-            "store": {
-                "name": "Pharmacy 7"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 400,
-            "store": {
-                "name": "Pharmacy 8"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 350,
-            "store": {
-                "name": "Pharmacy 9"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 380,
-            "store": {
-                "name": "Pharmacy 10"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 390,
-            "store": {
-                "name": "Pharmacy 11"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 440,
-            "store": {
-                "name": "MedPlus Pharmacy 1"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 470,
-            "store": {
-                "name": "MedPlus Pharmacy 2"
-            }
-        },
-        {
-            "name": "Paracetamol",
-            "price": 500,
-            "store": {
-                "name": "MedPlus Pharmacy 3"
-            }
-        }
-    ];*/
-     //sessionStorage.setItem("drugSearchResults",JSON.stringify(abc));
-    //sessionStorage.removeItem("drugSearchResults");
+// Dynamic rendering section
     const sortedDrugStores = JSON.parse(sessionStorage.getItem("drugSearchResults"));
     const searcherLocation = JSON.parse(sessionStorage.getItem("searcherLocation"));
     if(sortedDrugStores){
         const resultLength = sortedDrugStores.length;
         // Function to change index
         function changeIndex(marker){
-            let markerText = marker.innerText;
             const numberRegex = /\d+/;
-            markerText = markerText
-            .trim()
-            .split(" ")
-            .map((component,index)=>{
-                if(index == 2){
-                    return component.replace(numberRegex,resultLength);
-                }
-                else{
-                    return component;
-                }
-            })
-            .join(" ");
-            marker.innerText = markerText;
+            marker.innerHTML = marker.innerHTML.replace(numberRegex,resultLength);
         }
         // Change index of search results
         const searchMarker = document.getElementById("searchResultNumber");
@@ -152,73 +36,60 @@ showPanel(0);
 
         // Dynamically render the drugs and stores
         // Number 3 is used in order to have 3 cards in a row, purely a style choice
-        const productCardSection = document.getElementById("product_cards");
-        const numberOfSections = Math.ceil(resultLength/3);
+        const resultCardsContainer = document.getElementById("product_cards");
+        const resultPharmacyList = document.getElementById("pharmacy_list");
+        
+        sortedDrugStores.forEach((drugStore, index) => {
+            // Store Addresses
+            const storeLoc = document.createElement("li");
+            resultPharmacyList.appendChild(storeLoc);
+            
+            // card > img + div >> h3 + p + a
+            const card = document.createElement("div");
+            resultCardsContainer.appendChild(card);
+            card.classList.add("card");
 
-        if(productCardSection){
-            // product_cards > section
-        let counter = parseInt(`${resultLength}`);
-        for(let i=0;i<numberOfSections;i++){
-            // section > cards > card
-            const section = document.createElement("section");
-            const cards = document.createElement("div");
-            section.appendChild(cards);
-            productCardSection.appendChild(section);
-            cards.classList.add("cards");
+            const img = document.createElement("img");
+            card.appendChild(img);
+            img.src = "assets/img/Product  image.png";
+            img.alt = "";
+            const content = document.createElement("div");
+            card.appendChild(content);
+            content.classList.add("content");
 
-            for(let j=0;j<3;j++){
-                if(counter == 0){
-                    break;
-                }
-                else{
-                    // card > img + div >> h3 + p + a
-                    const card = document.createElement("div");
-                    cards.appendChild(card);
-                    card.classList.add("card");
+            const drugNameAndPrice = document.createElement("h3");
+            const pharmacyName = document.createElement("p");
+            const pharmacyLink = document.createElement("button");
+            content.appendChild(drugNameAndPrice);
+            content.appendChild(pharmacyName);
+            content.appendChild(pharmacyLink);
 
-                    const img = document.createElement("img");
-                    card.appendChild(img);
-                    img.src = "assets/img/Product  image.png";
-                    img.alt = "";
-                    const content = document.createElement("div");
-                    card.appendChild(content);
-                    content.classList.add("content");
-
-                    const drugNameAndPrice = document.createElement("h3");
-                    const pharmacyName = document.createElement("p");
-                    const pharmacyAddress = document.createElement("p");
-                    const pharmacyLink = document.createElement("a");
-                    content.appendChild(drugNameAndPrice);
-                    content.appendChild(pharmacyName);
-                    content.appendChild(pharmacyAddress);
-                    content.appendChild(pharmacyLink);
-
-
-                    const drugName = sortedDrugStores[resultLength-counter].name;
-                    const drugPrice = sortedDrugStores[resultLength-counter].price;
-                    const storeName = sortedDrugStores[resultLength-counter].store.name;
-                    const storeAddress = sortedDrugStores[resultLength-counter].store.address;
-                    drugNameAndPrice.innerHTML = `${drugName} <br> #${drugPrice}`;
-                    pharmacyName.innerText = `${storeName}`;
-                    pharmacyAddress.innerText = `${storeAddress}`;
-                    pharmacyLink.innerText = "Get Directions";
-                    pharmacyLink.classList.add("pharmacy-direction-button");
-                    pharmacyLink.href = `user-map-direction.html?s=${resultLength-counter}`;
-                    function checkOutStore(){
-                        //in progress
-                    }
-                    counter -= 1;
-                }
+            const drugName = drugStore.name;
+            const drugPrice = drugStore.price;
+            const storeName = drugStore.store.name;
+            const storeAddress = drugStore.store.address;
+            const storeAddressArray = storeAddress.split(",");
+            const storeCity = storeAddressArray[storeAddressArray.length - 2];
+            drugNameAndPrice.innerHTML = `${drugName} <br> #${drugPrice}`;
+            pharmacyName.innerText = `${storeName} ${storeCity}`;
+            pharmacyLink.innerText = "Get Directions";
+            pharmacyLink.classList.add("pharmacy-direction-button");
+            pharmacyLink.onclick = () => showPanel(1);
+            function checkOutStore(ind){
+                //showPanel(1);
+                //sortedDrugStores[ind];
+                //find element with that index, change styling
+                //highlight on map
             }
-        }
-        }    
+            storeLoc.innerHTML = `${storeName} <br>${storeAddress}`;
+        });    
     }
 
      // Render the map
      async function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
           center: searcherLocation,
-          zoom: 12,
+          zoom: 15,
           mapTypeControlOptions: {
               mapTypeIds: ["roadmap"]
           }
@@ -230,14 +101,12 @@ showPanel(0);
             <div><p>${store.contact.phone}</p></div>`;
         }
         const infowindow = new google.maps.InfoWindow();
-        const queryString = window.location.search;
-        const params = new URLSearchParams(queryString);
-        const storeIndex = params.get("s");
         sortedDrugStores.forEach(v => {
             const latLng = new google.maps.LatLng(v.store.geometry);
             const marker = new google.maps.Marker({
                 position: latLng,
                 map: map,
+                icon: "/assets/pharmacy-direction/green-pharmacy-symbol.png"
             });
             marker.addListener("click",() => {
                 infowindow.setContent(contentString(v.store));
@@ -247,7 +116,7 @@ showPanel(0);
                     shouldFocus: true
                 });
             });
-            if(storeIndex){
+            /* if(storeIndex){
                 marker.setMap(null);
                 const storePlace = new google.maps.Marker({
                     map,
@@ -261,7 +130,7 @@ showPanel(0);
                         shouldFocus: true
                     });
                 });
-            }
+            } */
             
         });
         
