@@ -66,7 +66,7 @@ img {
 .tab-container .button-container button {
   border: 1px solid red;
   display: inline-block;
-  width: 16rem;
+  width: 20rem;
   height: 50%;
   margin-right: 2rem;
   border: none;
@@ -125,8 +125,9 @@ h3 {
   color: #ffff;
   font-size: 17px;
   padding: 10px 18px;
-  border-radius: 5px;
+  border-radius: 7px;
   letter-spacing: 1.5px;
+  border: 1px solid #0cb2b2;
 }
 .pharmacy-direction-button:hover {
   color: #0cb2b2;
@@ -266,19 +267,4 @@ h3 {
   #indicator {
     margin-left: 0px;
   }
-}
-
-div#map {
-  position:absolute;
-  height: 600px;
-  width: 80%;
-  left: 10%;
-  margin-top: 5%;
-}
-
-
-html {
-  height: 80vh;
-  margin: 0;
-  padding: 0;
 }

@@ -49,60 +49,12 @@
     <section class="tabs">
         <div class="tab-container">
             <div class="button-container">
-                <button onclick="showPanel(0)">Search result (6)</button>
-                <button onclick="showPanel(1)"><span><i class="fas fa-map-marker-alt"></i></span> Active
-                    Pharmacy (6)</button>
+                <button onclick="showPanel(0)" id="searchResultNumber">Search result (0)</button>
+                <button onclick="showPanel(1)" id="pharmacyResultNumber"><span><i class="fas fa-map-marker-alt"></i></span> Active
+                    Pharmacy (0)</button>
             </div>
             <div class="tab-panel">
-                <div class="cards">
-                    <div class="card">
-                        <img src="assets/img/Product  image.png">
-                        <div class="content">
-                            <h3>ClotriVog <br> #3000</h3>
-                            <p>MedPlus Pharmacy Allen</p>
-                            <a href="" class="pharmacy-direction-button">Get Direction</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="assets/img/Product  image.png">
-                        <div class="content">
-                            <h3>ClotriVog <br> #2900</h3>
-                            <p>Joekem Pharmacy Allen</p>
-                            <a href="" class="pharmacy-direction-button">Get Direction</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="assets/img/Product  image.png">
-                        <div class="content">
-                            <h3>ClotriVog <br> #2900</h3>
-                            <p>Nett Pharmacy Allen</p>
-                            <a href="" class="pharmacy-direction-button">Get Direction</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="assets/img/Product  image.png">
-                        <div class="content">
-                            <h3>ClotriVog <br> #2950</h3>
-                            <p>Musaraq Pharmacy Allen</p>
-                            <a href="" class="pharmacy-direction-button">Get Direction</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="assets/img/Product  image.png">
-                        <div class="content">
-                            <h3>ClotriVog <br> #2900</h3>
-                            <p>Myde Pharmacy Allen</p>
-                            <a href="" class="pharmacy-direction-button">Get Direction</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="assets/img/Product  image.png">
-                        <div class="content">
-                            <h3>ClotriVog <br> #3200</h3>
-                            <p>Pontaic Pharmacy Allen</p>
-                            <a href="" class="pharmacy-direction-button">Get Direction</a>
-                        </div>
-                    </div>
+                <div class="cards" id="product_cards">
                 </div>
             </div>
             <div class="tab-panel">
@@ -119,17 +71,10 @@
                 </div>
                 <div class="search-detail">
                     <div class="address">
-                        <ol>
-                            <li>MedPlus Pharmacy <br>Plot 15, Allen road, Allen, Ikeja </li>
-                            <li>Joekem Pharmacy <br>23, Aromire street, Allen, Ikeja </li>
-                            <li>Nett Pharmacy <br>Plot 45, Allen road, Allen, Ikeja </li>
-                            <li>Musaruq Pharmacy <br>25, Majekodunmi street, Allen, Ikeja </li>
-                            <li>Myde Pharmacy <br>2, Salisu road, Allen, Ikeja </li>
-                            <li>Pontiac Pharmacy <br>8, Isaac John street, Allen, Ikeja </li>
+                        <ol id="pharmacy_list">
                         </ol>
                     </div>
-                    <div class="map-box">
-                        <img src="/assets/img/map.png" alt="Map"> 
+                    <div class="map-box" id="map"> 
                     </div>
                 </div>
             </div>
